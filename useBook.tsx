@@ -4,10 +4,12 @@ type bookType = {
   title: string;
   price: string;
 };
+
 export default function useBook(book: bookType) {
+  const [books, setBooks] = useState<bookType[]>([]);
   async function postBook() {
     try {
-      const res = await fetch("http://localhost:8080/books", {
+      const res = await fetch("http://localhost:8080/books/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -19,5 +21,15 @@ export default function useBook(book: bookType) {
       console.log(error.message);
     }
   }
-  return { postBook };
+  useEffect(() => {
+    async function getBooks() {
+      try {
+        const res = await fetch("http://localhost:8080/books");
+        const response = await res.json();
+        setBooks(response);
+      } catch (error) {}
+    }
+    getBooks();
+  }, [books]);
+  return { postBook, books };
 }

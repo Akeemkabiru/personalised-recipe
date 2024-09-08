@@ -6,11 +6,23 @@ export default function Home() {
   const [id, setId] = useState("");
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
-  const { postBook } = useBook({ id, title, price });
+  const { postBook, books } = useBook({ id, title, price });
+  const bookReverse = books.reverse();
 
+  function handleSubmit(e: any) {
+    e.preventDefault();
+    if (id && title && price) postBook();
+  }
   return (
     <main>
-      <form>
+      <form
+        onSubmit={(e) => {
+          handleSubmit(e);
+          setId("");
+          setPrice("");
+          setTitle("");
+        }}
+      >
         <input
           className="border-2"
           placeholder="book id"
@@ -23,17 +35,20 @@ export default function Home() {
           placeholder="title"
           type="text"
           value={title}
-          onChange={(e) => setId(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
           className="border-2"
           placeholder="price"
           type="text"
           value={price}
-          onChange={(e) => setId(e.target.value)}
+          onChange={(e) => setPrice(e.target.value)}
         />
         <button type="submit">Add Book</button>
       </form>
+      {bookReverse.map((book) => {
+        return <div key={book.title}>{book.title}</div>;
+      })}
     </main>
   );
 }
