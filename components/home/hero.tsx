@@ -8,7 +8,7 @@ export default function Hero() {
         backgroundSize: "cover",
       }}
     >
-      <div className="bg-black opacity-30 absolute w-full h-full"></div>
+      <div className="bg-black opacity-30 absolute w-full h-full z-1"></div>
       <h1 className="absolute w-full px-8 md:px-16 text-center text-[#fff] md:text-[40px] text-[20px] font-bold z-10">
         Be inspired, cook with passion, and savor unforgettable moments at the
         table.
