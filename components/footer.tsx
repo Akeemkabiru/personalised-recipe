@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-[100vw] h-[25vh] primary md:px-24 px-8 flex items-center justify-between text-[#2C2B2B]">
+    <footer className="w-[100vw] md:h-[25vh] h-[20vh] primary md:px-24 px-4 flex items-center justify-between text-[#2C2B2B]">
       <div className="flex md:flex-row flex-col md:gap-4 gap-2 md:items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export default function Footer() {
         </p>
       </div>
       <div className="flex flex-col gap-2 items-center">
-        <p>Connect with me</p>
+        <p className="text-[14px] font-light">Connect with me</p>
         <div className="flex gap-2">
           <Link href="" className="bg-gray-100 p-1 rounded-full bg-opacity-50">
             <svg
