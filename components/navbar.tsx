@@ -32,7 +32,11 @@ export default function NavBar() {
                 : "translate-x-[-100vw] md:translate-x-0"
             }`}
           >
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+              href="/"
+              onClick={() => setOpenSideBar(false)}
+              className="flex items-center gap-2"
+            >
               <svg
                 width="28px"
                 height="26px"
@@ -66,7 +70,11 @@ export default function NavBar() {
               Home
             </Link>
 
-            <Link href="/recipes" className="flex gap-2 items-center">
+            <Link
+              href="/recipes"
+              onClick={() => setOpenSideBar(false)}
+              className="flex gap-2 items-center"
+            >
               <svg
                 className="md:hidden block"
                 fill="#000000"
@@ -95,7 +103,11 @@ export default function NavBar() {
               </svg>
               Recipes
             </Link>
-            <Link href="/personalised-recipes" className="flex gap-1">
+            <Link
+              href="/personalised-recipes"
+              onClick={() => setOpenSideBar(false)}
+              className="flex gap-1"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 64 64"
@@ -189,7 +201,11 @@ export default function NavBar() {
               </svg>
               <p>Personalised</p>
             </Link>
-            <Link href="/about" className="flex gap-2 items-center">
+            <Link
+              href="/about"
+              onClick={() => setOpenSideBar(false)}
+              className="flex gap-2 items-center"
+            >
               <svg
                 width="28px"
                 height="26px"
