@@ -249,7 +249,7 @@ export default function NavBar() {
             <input
               type="text"
               placeholder="Search Recipes"
-              className="focus:outline-none bg-[#F5F2F2] rounded-full p-1 placeholder:text-[#858585] placeholder:font-light placeholder:text-[15px]"
+              className="focus:outline-none bg-[#F5F2F2] rounded-full p-2 placeholder:text-[#858585] placeholder:font-light placeholder:text-[15px]"
             />
           </div>
           <div className="md:hidden block">
