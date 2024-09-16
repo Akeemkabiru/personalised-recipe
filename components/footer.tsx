@@ -56,8 +56,8 @@ export default function Footer() {
           </Link>
           <Link href="" className="bg-gray-100 p-1 rounded-full bg-opacity-50">
             <svg
-              width="24"
-              height="24"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
