@@ -9,7 +9,7 @@ export default function NavBar() {
     <nav className="md:h-[15vh] h-[10vh] w-[100vw] border-b">
       <div className="w-full h-1/6 primary md:block hidden"></div>
       <div className="flex items-center justify-center w-full md:h-5/6 h-full">
-        <div className="flex md:items-center justify-between w-full md:px-12 px-4 gap-4 md:gap-0">
+        <div className="flex items-center justify-between w-full md:px-12 px-4 gap-4 md:gap-0">
           <div className="md:flex items-center gap-2 hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
