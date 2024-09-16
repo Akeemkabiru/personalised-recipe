@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-[100vw] md:h-[25vh] primary px-24 flex items-center justify-between text-[#2C2B2B]">
-      <div className="flex gap-4 items-center">
+    <footer className="w-[100vw] h-[25vh] primary md:px-24 px-8 flex items-center justify-between text-[#2C2B2B]">
+      <div className="flex md:flex-row flex-col md:gap-4 gap-2 md:items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="50"
@@ -16,7 +16,9 @@ export default function Footer() {
             fill="#2C2B2B"
           />
         </svg>
-        <p className="font-semibold items-center text-3xl">Delícias à Mesa</p>
+        <p className="font-semibold items-center md:text-3xl text-xl">
+          Delícias à Mesa
+        </p>
       </div>
       <div className="flex flex-col gap-2 items-center">
         <p>Connect with me</p>
