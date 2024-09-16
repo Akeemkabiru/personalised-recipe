@@ -10,7 +10,7 @@ export default function NavBar() {
       <div className="w-full h-1/6 primary md:block hidden"></div>
       <div className="flex items-center justify-center w-full md:h-5/6 h-full">
         <div className="flex md:items-center justify-between w-full md:px-12 px-4 gap-4 md:gap-0">
-          <div className="flex items-center gap-2">
+          <div className="md:flex items-center gap-2 hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="28"
@@ -23,7 +23,7 @@ export default function NavBar() {
                 fill="#2C2B2B"
               />
             </svg>
-            <p className="md:block hidden">Receitas</p>
+            <p>Receitas</p>
           </div>
           <div
             className={`flex md:flex-row flex-col md:items-center gap-12 md:font-semibold text-[#2C2B2B] md:relative absolute primary md:bg-white top-0 h-[100vh] w-[80vw] md:w-fit md:h-fit px-8 py-16 md:p-0 text-[16px] transition-all duration-500 ${
@@ -233,7 +233,7 @@ export default function NavBar() {
               About
             </Link>
           </div>
-          <div className="flex items-center gap-2  rounded-full w-[60vw] md:w-[25vw] bg-[#F5F2F2] pl-4">
+          <div className="flex items-center gap-2  rounded-full bg-[#F5F2F2] pl-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="19"
