@@ -1,7 +1,7 @@
 export default function Hero() {
   return (
     <header
-      className="relative w-full md:h-[400px] h-[30vh] flex items-center justify-center"
+      className="relative w-full md:h-[362px] h-[200px] flex items-center justify-center"
       style={{
         backgroundImage: `url('/images/hero.png')`,
         backgroundPosition: "center",
