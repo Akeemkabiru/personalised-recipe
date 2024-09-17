@@ -26,8 +26,8 @@ export default function NavBar() {
             <p>Receitas</p>
           </div>
           <div
-            className={`flex md:flex-row flex-col md:items-center gap-12 md:font-semibold text-[#2C2B2B] md:relative absolute z-50 left-0  primary md:bg-white top-0 h-screen w-[80vw] md:w-fit md:h-fit px-8 py-16 md:p-0 text-[16px] md:translate-x-0 transition-all duration-500 ${
-              openSideBar ? "translate-x-0" : "translate-x-[-80vw] ease-in-out"
+            className={`flex md:flex-row flex-col md:items-center gap-12 md:font-semibold text-[#2C2B2B] md:relative absolute z-50 left-0  primary md:bg-white top-0 h-screen w-[80vw] md:w-fit md:h-fit px-8 py-16 md:p-0 text-[16px] md:translate-x-0 transition-all duration-500 ease-out ${
+              openSideBar ? "translate-x-0" : "translate-x-[-80vw]"
             }`}
           >
             <Link
