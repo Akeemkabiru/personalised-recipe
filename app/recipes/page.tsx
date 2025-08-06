@@ -10,11 +10,7 @@ import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
-interface HomeScreenProps {
-  onNavigate: (screen: string, data?: any) => void;
-}
-
-const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
+const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [newIngredient, setNewIngredient] = useState("");
@@ -174,7 +170,6 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
             <Card
               key={recipe.id}
               className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg cursor-pointer hover:scale-105 transition-all "
-              onClick={() => onNavigate("recipe", recipe)}
             >
               <CardContent className="p-0">
                 <div className="flex">
