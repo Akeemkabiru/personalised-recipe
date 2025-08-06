@@ -1,10 +1,15 @@
+"use client";
+
 import Button from "@/components/ui/button";
 import { ChefHat, Sparkles } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function WelcomeScreen() {
+  const { push } = useRouter();
+
   return (
-    <div className=" h-screen  flex flex-col items-center justify-center">
+    <div className=" h-screen flex flex-col items-center justify-center">
       <div className="text-center space-y-8 from-chef-cream to-chef-warm bg-gradient-to-br py-12 px-6 rounded-2xl">
         {/* Logo */}
         <div className="flex flex-col items-center space-y-4">
@@ -30,7 +35,7 @@ export default function WelcomeScreen() {
 
         {/* Call to Action Buttons */}
         <div className="space-y-4">
-          <Button>Get Started</Button>
+          <Button onClick={() => push("/recipes")}>Get Started</Button>
           <Button outline={true}>Sign in</Button>
         </div>
 

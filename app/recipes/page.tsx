@@ -8,6 +8,7 @@ import { Search, Plus, Clock, Star, Sparkles } from "lucide-react";
 import Button from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 interface HomeScreenProps {
   onNavigate: (screen: string, data?: any) => void;
@@ -28,6 +29,8 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
   const removeIngredient = (ingredient: string) => {
     setIngredients(ingredients.filter((i) => i !== ingredient));
   };
+
+  const { ref, inView } = useInView({ threshold: 1, rootMargin: "100px" });
 
   const suggestedRecipes = [
     {
@@ -54,12 +57,53 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
       rating: 4.9,
       ingredients: ["flour", "chocolate chips", "butter", "eggs"],
     },
+
+    {
+      id: 3,
+      title: "Classic Chocolate Chip Cookies",
+      image: "/images/pasta-dish.jpg",
+      prepTime: "30 min",
+      rating: 4.9,
+      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
+    },
+
+    {
+      id: 3,
+      title: "Classic Chocolate Chip Cookies",
+      image: "/images/pasta-dish.jpg",
+      prepTime: "30 min",
+      rating: 4.9,
+      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
+    },
+
+    {
+      id: 3,
+      title: "Classic Chocolate Chip Cookies",
+      image: "/images/pasta-dish.jpg",
+      prepTime: "30 min",
+      rating: 4.9,
+      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
+    },
+
+    {
+      id: 3,
+      title: "Classic Chocolate Chip Cookies",
+      image: "/images/pasta-dish.jpg",
+      prepTime: "30 min",
+      rating: 4.9,
+      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
+    },
   ];
 
   return (
-    <div className="min-h-screen bg-background w-[450px]">
+    <div
+      className={`min-h-screen text-sm  overflow-y-scroll md:overflow-hidden bg-background w-[450px]`}
+    >
       {/* Header */}
-      <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
+      <div
+        ref={ref}
+        className={`bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg`}
+      >
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-white">SmartChef</h1>
@@ -85,10 +129,14 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
                 onChange={(e) => setNewIngredient(e.target.value)}
                 placeholder="Add ingredient..."
                 className="bg-white rounded-xl border-0 shadow-md"
+                onSubmit={() => addIngredient()}
                 onKeyPress={(e) => e.key === "Enter" && addIngredient()}
               />
 
-              <div className="bg-white text-black rounded-xl p-3 font-semibold hover:bg-chef-green group hover:text-white cursor-pointer">
+              <div
+                onClick={() => addIngredient()}
+                className="bg-white text-black rounded-xl p-3 font-semibold hover:bg-chef-green group transition-colors duration-300 hover:text-white cursor-pointer"
+              >
                 <Plus className="w-4 h-4" />
               </div>
             </div>
@@ -103,7 +151,7 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
                     className="bg-white text-chef-orange rounded-full px-3 py-1 cursor-pointer hover:bg-chef-warm transition-colors"
                     onClick={() => removeIngredient(ingredient)}
                   >
-                    {ingredient} ×
+                    {`${ingredient} x`}
                   </Badge>
                 ))}
               </div>
@@ -125,7 +173,7 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
           {suggestedRecipes.map((recipe) => (
             <Card
               key={recipe.id}
-              className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-shadow cursor-pointer"
+              className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg cursor-pointer hover:scale-105 transition-all "
               onClick={() => onNavigate("recipe", recipe)}
             >
               <CardContent className="p-0">
@@ -160,20 +208,24 @@ const HomeScreen = ({ onNavigate }: HomeScreenProps) => {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-border p-4">
+      <div
+        className={`fixed bottom-0 left-0 right-0 bg-white transition-all duration-500 border-t border-border px-4 py-2 ${
+          inView ? "translate-y-24 md:translate-y-0" : "translate-y-0"
+        }`}
+      >
         <div className="flex justify-around">
-          <div>
-            <Search className="w-5 h-5" />
+          <div className="flex flex-col items-center gap-y-2 font-medium">
+            <Search className="w-4 h-4" />
             <span className="text-xs">Search</span>
           </div>
 
-          <div>
-            <Sparkles className="w-5 h-5" />
+          <div className="flex flex-col items-center gap-y-2 font-medium">
+            <Sparkles className="w-4 h-4" />
             <span className="text-xs">Voice</span>
           </div>
 
-          <div>
-            <Star className="w-5 h-5" />
+          <div className="flex flex-col items-center gap-y-2 font-medium">
+            <Star className="w-4 h-4" />
             <span className="text-xs">Favorites</span>
           </div>
         </div>

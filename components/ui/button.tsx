@@ -6,6 +6,7 @@ type ButtonPropsType = {
   disabled?: boolean;
   isLoading?: boolean;
   greenBg?: boolean;
+  onClick?: () => void;
 };
 
 export default function Button({
@@ -14,9 +15,11 @@ export default function Button({
   isLoading = false,
   disabled = false,
   greenBg,
+  onClick,
 }: ButtonPropsType) {
   return (
     <button
+      onClick={onClick}
       disabled={disabled || isLoading}
       className={`font-semibold py-3 rounded-2xl shadow-lg transition-all duration-300 transform  w-full ${
         outline
