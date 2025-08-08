@@ -8,7 +8,6 @@ import { Search, Plus, Clock, Star, Sparkles } from "lucide-react";
 import Button from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { useInView } from "react-intersection-observer";
 import { suggestedRecipes } from "@/constant";
 import { useRouter } from "next/navigation";
 
@@ -29,15 +28,12 @@ const HomeScreen = () => {
     setIngredients(ingredients.filter((i) => i !== ingredient));
   };
 
-  const { ref, inView } = useInView({ threshold: 1, rootMargin: "100px" });
-
   return (
     <div
       className={`min-h-screen text-sm  overflow-y-scroll md:overflow-hidden bg-background w-[450px]`}
     >
       {/* Header */}
       <div
-        ref={ref}
         className={`bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg`}
       >
         <div className="space-y-4">
@@ -145,9 +141,7 @@ const HomeScreen = () => {
 
       {/* Bottom Navigation */}
       <div
-        className={`fixed bottom-0 left-0 right-0 bg-white transition-all duration-500 border-t border-border px-4 py-2 shadow-lg ${
-          inView ? "translate-y-24 md:translate-y-0" : "translate-y-0"
-        }`}
+        className={`fixed bottom-0 left-0 right-0 bg-white transition-all duration-500 border-t border-border px-4 py-2 shadow-lg`}
       >
         <div className="flex justify-around">
           <div className="flex flex-col items-center gap-y-2 font-medium">
