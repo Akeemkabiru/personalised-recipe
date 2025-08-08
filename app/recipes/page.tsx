@@ -100,7 +100,7 @@ const HomeScreen = () => {
       </div>
 
       {/* Recipe Suggestions */}
-      <div className="p-6 space-y-4">
+      <div className="p-6 space-y-4 mb-24">
         <h2 className="text-xl font-semibold text-foreground">
           AI Suggested Recipes
         </h2>
@@ -145,7 +145,7 @@ const HomeScreen = () => {
 
       {/* Bottom Navigation */}
       <div
-        className={`fixed bottom-0 left-0 right-0 bg-white transition-all duration-500 border-t border-border px-4 py-2 ${
+        className={`fixed bottom-0 left-0 right-0 bg-white transition-all duration-500 border-t border-border px-4 py-2 shadow-lg ${
           inView ? "translate-y-24 md:translate-y-0" : "translate-y-0"
         }`}
       >
