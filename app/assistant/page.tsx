@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Mic, MicOff, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { useState } from "react";
 
 interface VoiceAssistantScreenProps {
   onNavigate: (screen: string) => void;
