@@ -5,10 +5,6 @@ import { ArrowLeft, Mic, MicOff, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 
-interface VoiceAssistantScreenProps {
-  onNavigate: (screen: string) => void;
-}
-
 interface ChatMessage {
   id: number;
   type: "user" | "ai";
@@ -16,7 +12,7 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-const VoiceAssistantScreen = ({ onNavigate }: VoiceAssistantScreenProps) => {
+const VoiceAssistantScreen = () => {
   const [isListening, setIsListening] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -77,10 +73,7 @@ const VoiceAssistantScreen = ({ onNavigate }: VoiceAssistantScreenProps) => {
       {/* Header */}
       <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
         <div className="flex items-center gap-4">
-          <div
-            className="rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30"
-            onClick={() => onNavigate("home")}
-          >
+          <div className="rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30">
             <ArrowLeft className="w-5 h-5" />
           </div>
           <div>
