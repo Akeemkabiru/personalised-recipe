@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Mic, MicOff, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
