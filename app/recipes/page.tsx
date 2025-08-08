@@ -155,12 +155,18 @@ const HomeScreen = () => {
             <span className="text-xs">Search</span>
           </div>
 
-          <div className="flex flex-col items-center gap-y-2 font-medium">
+          <div
+            onClick={() => push("/assistant")}
+            className="flex flex-col items-center gap-y-2 font-medium"
+          >
             <Sparkles className="w-4 h-4" />
             <span className="text-xs">Voice</span>
           </div>
 
-          <div className="flex flex-col items-center gap-y-2 font-medium">
+          <div
+            onClick={() => push("/favorites")}
+            className="flex flex-col items-center gap-y-2 font-medium"
+          >
             <Star className="w-4 h-4" />
             <span className="text-xs">Favorites</span>
           </div>

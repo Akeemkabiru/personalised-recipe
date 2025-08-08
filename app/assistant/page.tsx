@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, Mic, MicOff, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface ChatMessage {
   id: number;
@@ -13,6 +14,7 @@ interface ChatMessage {
 }
 
 const VoiceAssistantScreen = () => {
+  const { back } = useRouter();
   const [isListening, setIsListening] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -73,8 +75,8 @@ const VoiceAssistantScreen = () => {
       {/* Header */}
       <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
         <div className="flex items-center gap-4">
-          <div className="rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30">
-            <ArrowLeft className="w-5 h-5" />
+          <div className="rounded-full bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 cursor-pointer">
+            <ArrowLeft onClick={() => back()} className="w-5 h-5" />
           </div>
           <div>
             <h1 className="text-xl font-bold text-white">AI Assistant</h1>
