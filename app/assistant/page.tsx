@@ -16,9 +16,7 @@ interface ChatMessage {
   timestamp: Date;
 }
 
-export const VoiceAssistantScreen = ({
-  onNavigate,
-}: VoiceAssistantScreenProps) => {
+const VoiceAssistantScreen = ({ onNavigate }: VoiceAssistantScreenProps) => {
   const [isListening, setIsListening] = useState(false);
   const [textInput, setTextInput] = useState("");
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -230,3 +228,5 @@ export const VoiceAssistantScreen = ({
     </div>
   );
 };
+
+export default VoiceAssistantScreen;
