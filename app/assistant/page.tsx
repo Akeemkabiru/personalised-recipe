@@ -69,7 +69,7 @@ const VoiceAssistantScreen = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background w-[450px] flex flex-col">
       {/* Header */}
       <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
         <div className="flex items-center gap-4">
