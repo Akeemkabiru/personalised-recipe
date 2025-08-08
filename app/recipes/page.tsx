@@ -9,11 +9,14 @@ import Button from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import { suggestedRecipes } from "@/constant";
+import { useRouter } from "next/navigation";
 
 const HomeScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [ingredients, setIngredients] = useState<string[]>([]);
   const [newIngredient, setNewIngredient] = useState("");
+  const { push } = useRouter();
 
   const addIngredient = () => {
     if (newIngredient.trim() && !ingredients.includes(newIngredient.trim())) {
@@ -27,69 +30,6 @@ const HomeScreen = () => {
   };
 
   const { ref, inView } = useInView({ threshold: 1, rootMargin: "100px" });
-
-  const suggestedRecipes = [
-    {
-      id: 1,
-      title: "Creamy Tomato Basil Pasta",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "25 min",
-      rating: 4.8,
-      ingredients: ["pasta", "tomatoes", "basil", "cream"],
-    },
-    {
-      id: 2,
-      title: "Grilled Chicken Garden Salad",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "15 min",
-      rating: 4.6,
-      ingredients: ["chicken", "lettuce", "tomatoes", "cucumber"],
-    },
-    {
-      id: 3,
-      title: "Classic Chocolate Chip Cookies",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "30 min",
-      rating: 4.9,
-      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
-    },
-
-    {
-      id: 3,
-      title: "Classic Chocolate Chip Cookies",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "30 min",
-      rating: 4.9,
-      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
-    },
-
-    {
-      id: 3,
-      title: "Classic Chocolate Chip Cookies",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "30 min",
-      rating: 4.9,
-      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
-    },
-
-    {
-      id: 3,
-      title: "Classic Chocolate Chip Cookies",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "30 min",
-      rating: 4.9,
-      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
-    },
-
-    {
-      id: 3,
-      title: "Classic Chocolate Chip Cookies",
-      image: "/images/pasta-dish.jpg",
-      prepTime: "30 min",
-      rating: 4.9,
-      ingredients: ["flour", "chocolate chips", "butter", "eggs"],
-    },
-  ];
 
   return (
     <div
@@ -169,6 +109,7 @@ const HomeScreen = () => {
           {suggestedRecipes.map((recipe) => (
             <Card
               key={recipe.id}
+              onClick={() => push("/recipe-details")}
               className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg cursor-pointer hover:scale-105 transition-all "
             >
               <CardContent className="p-0">
