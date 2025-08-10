@@ -52,7 +52,7 @@ const VoiceAssistantScreen = () => {
   return (
     <main className="flex gap-x-6 max-h-screen text-sm ">
       <div
-        className={`h-screen  fixed left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
+        className={`h-screen  fixed bottom-0 z-[100] left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
           !openHistory
             ? "-translate-x-[200px] md:translate-x-0"
             : "translate-x-0"
@@ -60,7 +60,7 @@ const VoiceAssistantScreen = () => {
       >
         {openHistory && (
           <div className="flex-end w-full flex items-end justify-end">
-            <X onClick={() => setOpenHistory(false)} size={20} />
+            <X onClick={() => setOpenHistory(false)} size={24} />
           </div>
         )}
         {history.map((title: string, idx: number) => {
@@ -78,20 +78,20 @@ const VoiceAssistantScreen = () => {
         })}
       </div>
       <div className="min-h-screen bg-background md:w-[450px]   flex flex-col">
-        <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
+        <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light py-6 px-2 md:p-6 rounded-b-3xl shadow-lg">
           <div className="flex items-center gap-4">
             <div className="md:rounded-full md:bg-white/20 backdrop-blur-sm text-white md:hover:bg-white/30 cursor-pointer">
               <ArrowLeft
                 className="hidden md:block"
                 onClick={() => back()}
-                size={20}
+                size={24}
               />
             </div>
 
             <div className="flex gap-x-4">
               <div className="md:hidden cursor-pointer text-white">
                 {!openHistory && (
-                  <Menu onClick={() => setOpenHistory(true)} size={20} />
+                  <Menu onClick={() => setOpenHistory(true)} size={24} />
                 )}
               </div>
               <div>
