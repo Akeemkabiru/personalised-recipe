@@ -50,7 +50,7 @@ const VoiceAssistantScreen = () => {
   };
 
   return (
-    <main className="flex gap-x-4 max-h-screen text-sm">
+    <main className="flex gap-x-6 max-h-screen text-sm w-[450px]">
       <div
         className={`h-screen fixed left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
           !openHistory
@@ -77,27 +77,29 @@ const VoiceAssistantScreen = () => {
           );
         })}
       </div>
-      <div className="min-h-screen bg-background w-[450px] flex flex-col">
+      <div className="min-h-screen bg-background  flex flex-col">
         <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
           <div className="flex items-center gap-4">
             <div className="md:rounded-full md:bg-white/20 backdrop-blur-sm text-white md:hover:bg-white/30 cursor-pointer">
-              <div className="md:hidden cursor-pointer">
-                {!openHistory && (
-                  <Menu onClick={() => setOpenHistory(true)} size={20} />
-                )}
-              </div>
-
               <ArrowLeft
                 className="hidden md:block"
                 onClick={() => back()}
                 size={20}
               />
             </div>
-            <div>
-              <h1 className="text-xl font-bold text-white">AI Assistant</h1>
-              <p className="text-white/80 text-sm">
-                Ask me anything about cooking!
-              </p>
+
+            <div className="flex gap-x-4">
+              <div className="md:hidden cursor-pointer text-white">
+                {!openHistory && (
+                  <Menu onClick={() => setOpenHistory(true)} size={20} />
+                )}
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-white">AI Assistant</h1>
+                <p className="text-white/80 text-sm">
+                  Ask me anything about cooking!
+                </p>
+              </div>
             </div>
           </div>
         </div>
