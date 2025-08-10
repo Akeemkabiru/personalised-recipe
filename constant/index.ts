@@ -87,19 +87,25 @@ export const chats = [
     type: "ai",
     content:
       "Hi! I'm your AI cooking assistant. Ask me anything about recipes, substitutions, or cooking techniques!",
-    timestamp: new Date(),
+    timestamp: new Date(Date.now()),
   },
   {
     id: 2,
     type: "user",
     content: "Can I substitute butter with oil in the cookie recipe?",
-    timestamp: new Date(),
+    timestamp: new Date(Date.now()),
   },
   {
     id: 3,
     type: "ai",
     content:
       "Yes! You can substitute butter with oil in cookies. Use 3/4 the amount of oil as butter (so if recipe calls for 1 cup butter, use 3/4 cup oil). This will make cookies more tender and slightly less crispy. Vegetable oil or melted coconut oil work best.",
-    timestamp: new Date(),
+    timestamp: new Date(Date.now()),
   },
+];
+
+export const history = [
+  "Pasta with garlic",
+  "Beans and rice",
+  "Egg sauce and rice",
 ];
