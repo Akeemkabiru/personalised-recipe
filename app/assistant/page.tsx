@@ -50,9 +50,9 @@ const VoiceAssistantScreen = () => {
   };
 
   return (
-    <main className="flex gap-x-6 max-h-screen text-sm w-[450px]">
+    <main className="flex gap-x-6 max-h-screen text-sm ">
       <div
-        className={`h-screen fixed left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
+        className={`h-screen  fixed left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
           !openHistory
             ? "-translate-x-[200px] md:translate-x-0"
             : "translate-x-0"
@@ -77,7 +77,7 @@ const VoiceAssistantScreen = () => {
           );
         })}
       </div>
-      <div className="min-h-screen bg-background  flex flex-col">
+      <div className="min-h-screen bg-background md:w-[450px]   flex flex-col">
         <div className="bg-gradient-to-r from-chef-orange to-chef-orange-light p-6 rounded-b-3xl shadow-lg">
           <div className="flex items-center gap-4">
             <div className="md:rounded-full md:bg-white/20 backdrop-blur-sm text-white md:hover:bg-white/30 cursor-pointer">
