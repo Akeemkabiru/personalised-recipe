@@ -59,7 +59,7 @@ const VoiceAssistantScreen = () => {
         }`}
       >
         {openHistory && (
-          <div className="flex-end w-full flex items-end justify-end">
+          <div className="flex-end w-full flex items-end justify-end mb-4">
             <X onClick={() => setOpenHistory(false)} size={24} />
           </div>
         )}
