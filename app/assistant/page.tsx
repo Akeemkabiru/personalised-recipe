@@ -52,7 +52,7 @@ const VoiceAssistantScreen = () => {
   return (
     <main className="flex gap-x-6 max-h-screen text-sm ">
       <div
-        className={`h-screen  fixed bottom-0 z-[100] left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
+        className={`h-screen  fixed bottom-0 top-0 z-[100] left-0 md:relative transition-all duration-300 bg-chef-orange px-2 text-white space-y-2 py-6 w-[200px] font-medium ${
           !openHistory
             ? "-translate-x-[200px] md:translate-x-0"
             : "translate-x-0"
